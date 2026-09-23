@@ -51,6 +51,7 @@ class Solution {
                 } else { // Target is in the left subarray
                     right = middle - 1;
                 }
+                
             }
         }
 
