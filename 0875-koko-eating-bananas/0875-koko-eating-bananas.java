@@ -17,11 +17,10 @@ class Solution {
 
         int min_eating_speed = Math.max(1, (int) ((total + h - 1) / h));
 
-        long current_eating_hour;
+        int current_eating_hour;
         while (min_eating_speed <= max_eating_speed) {
 
-            int average_eating_speed =
-                    min_eating_speed + (max_eating_speed - min_eating_speed) / 2;
+            int average_eating_speed = (min_eating_speed + max_eating_speed) / 2;
 
             current_eating_hour = calculateTotalEatingHours(piles, n, average_eating_speed);
 
