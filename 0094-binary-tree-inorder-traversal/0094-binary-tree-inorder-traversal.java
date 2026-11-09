@@ -13,6 +13,8 @@
  *     }
  * }
  */
+// Iterative DFS Inorder Traversal
+// Time & Space Complexity: O(n)
 
 class Solution {
 
@@ -59,7 +61,8 @@ class Solution {
 }
 
 
-// Recursion
+// Recursion DFS Inorder Traversal
+// Time & Space Complexity: O(n)
 
 // class Solution {
 //     public List<Integer> inorderTraversal(TreeNode root) {
@@ -71,8 +74,8 @@ class Solution {
 //         return answer;
 //     }
 
-//     public void inorder(TreeNode root, List<Integer> answer) {
-//         if (root == null) {
+//     public void inorder(TreeNode node, List<Integer> answer) {
+//         if (node == null) {
 //             return;
 //         }
 
@@ -99,8 +102,8 @@ class Solution {
 
 //         // answer.add(1)
 //         // ...
-//         inorder(root.left, answer);
-//         answer.add(root.val);
-//         inorder(root.right, answer);
+//         inorder(node.left, answer);
+//         answer.add(node.val);
+//         inorder(node.right, answer);
 //     }
 // }
