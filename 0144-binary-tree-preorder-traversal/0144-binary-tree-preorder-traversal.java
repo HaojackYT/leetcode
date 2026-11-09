@@ -13,6 +13,9 @@
  *     }
  * }
  */
+// Iterative DFS Preorder Traversal
+// Time & Space Complexity: O(n)
+
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
         if (root == null) {
@@ -42,7 +45,8 @@ class Solution {
     }
 }
 
-// Recursive
+// Recursion DFS Preorder Traversal
+// Time & Space Complexity: O(n)
 
 // class Solution {
 //     public List<Integer> preorderTraversal(TreeNode root) {
