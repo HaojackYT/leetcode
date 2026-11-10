@@ -13,6 +13,9 @@
  *     }
  * }
  */
+// Iterative DFS Postorder Traversal
+// Time & Space Complexity: O(n)
+
 class Solution {
     public List<Integer> postorderTraversal(TreeNode root) {
         if (root == null) {
@@ -46,7 +49,8 @@ class Solution {
     }
 }
 
-// Recursive
+// Recursion DFS Postorder Traversal
+// Time & Space Complexity: O(n)
 
 // class Solution {
 //     public List<Integer> postorderTraversal(TreeNode root) {
