@@ -13,12 +13,26 @@
  *     }
  * }
  */
+// Recursion DFS Preorder Traversal
+// Time Complexity: O(m * n)
+// Space Complexity: O(m + n)
+// m: number of nodes in the root tree
+// n: number of nodes in the subRoot tree
+
 class Solution {
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
+        if (subRoot == null) {
+            return true;
+        }
+
         return isSubtreeHelper(root, subRoot);
     }
 
-    public boolean isSubtreeHelper(TreeNode root, TreeNode subRoot) {    
+    public boolean isSubtreeHelper(TreeNode root, TreeNode subRoot) {
+        if (root == null) {
+            return false;
+        }
+
         if (isSameTree(root, subRoot)) {
             return true;
         }
@@ -40,3 +54,86 @@ class Solution {
                 isSameTree(root_node.right, sub_node.right);
     }
 }
+
+// Iterative DFS Preorder Traversal
+// Time Complexity: O(n * m)
+// Space Complexity: O(n + m)
+
+// class Solution {
+
+//     class TreeNodePair {
+//         TreeNode rootNode;
+//         TreeNode subNode;
+
+//         TreeNodePair(TreeNode rootNode, TreeNode subNode) {
+//             this.rootNode = rootNode;
+//             this.subNode = subNode;
+//         }
+//     }
+
+//     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
+//         if (subRoot == null) {
+//             return true;
+//         }
+
+//         if (root == null) {
+//             return false;
+//         }
+
+//         Stack<TreeNode> root_stack = new Stack<>();
+//         root_stack.push(root);
+
+//         while (!root_stack.isEmpty()) {
+//             TreeNode node_of_root = root_stack.pop();
+
+//             if (node_of_root.val == subRoot.val) {
+//                 if (isSameTree(node_of_root, subRoot)) {
+//                     return true;
+//                 }
+//             }
+
+//             if (node_of_root.right != null) {
+//                 root_stack.push(node_of_root.right);
+//             }
+
+//             if (node_of_root.left != null) {
+//                 root_stack.push(node_of_root.left);
+//             }
+//         }
+
+//         return false;
+//     }
+
+//     private boolean isSameTree(TreeNode rootNode, TreeNode subNode) {
+//         Stack<TreeNodePair> sub_stack = new Stack<>();
+//         sub_stack.push(new TreeNodePair(rootNode, subNode));
+
+//         while (!sub_stack.isEmpty()) {
+//             TreeNodePair pair = sub_stack.pop();
+
+//             TreeNode node_of_root = pair.rootNode;
+//             TreeNode node_of_sub = pair.subNode;
+
+//             if (node_of_root == null && node_of_sub == null) {
+//                 continue; // matching
+//             }
+
+//             if (node_of_root == null || node_of_sub == null) {
+//                 return false; // not matching
+//             }
+
+//             // The nodes' values must also match
+//             if (node_of_root.val != node_of_sub.val) {
+//                 return false;
+//             }
+
+//             // Compare corresponding left children of both trees
+//             sub_stack.push(new TreeNodePair(node_of_root.left, node_of_sub.left));
+
+//             // Compare corresponding right children of both trees
+//             sub_stack.push(new TreeNodePair(node_of_root.right, node_of_sub.right));
+//         }
+
+//         return true;
+//     }
+// }
