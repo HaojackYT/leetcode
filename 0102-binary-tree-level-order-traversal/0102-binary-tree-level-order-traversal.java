@@ -39,7 +39,7 @@ class Solution {
     }
 }
 
-// Iterative BFS Preorder Traversal
+// Iterative BFS Traversal
 // Time & Space Complexity: O(n)
 
 // class Solution {
